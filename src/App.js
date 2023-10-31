@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import Homepages from './pages/Homepages';
 import Coinpage from './pages/Coinpage';
-import { colors, makeStyles } from '@material-ui/core';
+import { color, makeStyles } from '@material-ui/core';
 
 function App() {
   const useStyles = makeStyles(()=>({
