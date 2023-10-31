@@ -9,12 +9,12 @@ import { color, makeStyles } from '@material-ui/core';
 function App() {
   const useStyles = makeStyles(()=>({
     App:{
-      backgroundcolor:"#14161a",
+      backgroundColor:"#14161a",
       color:"white",
       minHeight:"100vh",
     },
   }));
-  const classes =useStyles()
+  const classes =useStyles();
   return (
     <BrowserRouter>
     <div className={classes.App}>
