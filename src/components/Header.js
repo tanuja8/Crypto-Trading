@@ -1,12 +1,19 @@
-import { AppBar, Container, MenuItem, Select, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Container, MenuItem, Select, Toolbar, Typography, makeStyles } from '@material-ui/core'
 import React from 'react'
-
+const useStyles=makeStyles(()=>({
+  title:{
+    flex:1,
+    fontWeight:"bold",
+    cursor:"pointer",
+  }
+}))
 const Header = () => {
+  const classes =useStyles()
   return (
   <AppBar color='transparent' position='static'>
     <Container>
       <Toolbar>
-        <Typography>
+        <Typography  className={classes.title}>
           Crypto Trading
           <Select variant='outlined' style={{
             width:100,
