@@ -10,7 +10,7 @@ function App() {
   const useStyles = makeStyles(()=>({
     App:{
       backgroundColor:"#14161a",
-      color:"white",
+      color:"gold",
       minHeight:"100vh",
     },
   }));
