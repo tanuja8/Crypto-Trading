@@ -4,13 +4,13 @@ import './App.css';
 import Header from './components/Header';
 import Homepages from './pages/Homepages';
 import Coinpage from './pages/Coinpage';
-import { color, makeStyles } from '@material-ui/core';
+import {  makeStyles } from '@material-ui/core';
 
 function App() {
   const useStyles = makeStyles(()=>({
     App:{
       backgroundColor:"#14161a",
-      color:"gold",
+      color:"white",
       minHeight:"100vh",
     },
   }));
