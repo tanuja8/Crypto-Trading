@@ -9,6 +9,7 @@ const Cryptocontex = ({children}) => {
     if (currency==="INR") setSymbol("₹");
     else if (currency === "USD") setSymbol("$")
   },[currency])
+
   return (
     <Crypto.Provider value={{currency,symbol,setCurrency}}>{children}</Crypto.Provider>
   )
@@ -17,5 +18,5 @@ const Cryptocontex = ({children}) => {
 export default Cryptocontex
 
 export const CryptoState = () => {
-  return useContext(crypto)
+  return useContext(Crypto)
 }
