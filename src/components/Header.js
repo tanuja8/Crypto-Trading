@@ -11,6 +11,7 @@ const useStyles=makeStyles(()=>({
 const Header = () => {
   const classes =useStyles()
   const {currency , setCurrency}=CryptoState();
+  console.log(currency)
   return (
   <AppBar color='transparent' position='static'>
     <Container>
