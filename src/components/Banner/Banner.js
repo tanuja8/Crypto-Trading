@@ -1,4 +1,4 @@
-import { Container, makeStyles } from '@material-ui/core'
+import { Container, Typography, makeStyles } from '@material-ui/core'
 import React from 'react'
 
 const useStyles=makeStyles(() =>({
@@ -18,8 +18,17 @@ const Banner = () => {
   return (
     <div className={classes.banner}>
       <Container className={classes.bannerContent}>
-        <div className='classes.tagline'> */last line*/
-
+        <div className={classes.tagline}> 
+          <Typography 
+          variant="h2"
+          style={{
+            fontWeight:"bold",
+            marginBottom:15,
+            color:"white"
+          }}
+          >
+            Crypto Hunter
+          </Typography>
         </div>
       </Container>
     </div>
