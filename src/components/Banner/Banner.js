@@ -4,9 +4,10 @@ import React from 'react'
 const useStyles=makeStyles(() =>({
    banner:{
     background:"url(./banner.jpg)",
+    backgroundSize:"cover",
    } ,
    bannerContent:{
-    height :400,
+    height :500,
     display:"flex",
     flexDirection:"column",
     paddingTop:25,
@@ -28,6 +29,14 @@ const Banner = () => {
           }}
           >
             Crypto Hunter
+          </Typography>
+          <Typography 
+          variant="subtitle2"
+          style={{
+            color:"darkgray",
+            textTransform:"capitalize"
+          }}>
+            Get all the Info regarding your favourite Crypto Currency
           </Typography>
         </div>
       </Container>
