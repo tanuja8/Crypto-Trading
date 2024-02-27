@@ -21,9 +21,10 @@ const Carousal = () => {
         const {data}=await axios.get(TrendingCoins(currency))
         setTrending(data)
     };
+    console.log(trending)
     useEffect(()=>{
-    //  last line ****************************************************************************  
-    })
+      fetchTrendingCoins();
+        },[currency]);
   return (
     <div className={classes.Carousal}>
       Carousal
