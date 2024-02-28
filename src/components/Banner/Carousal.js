@@ -30,6 +30,7 @@ const Carousal = () => {
 
 
         const items=trending.map((coin) =>{
+          let profit=coin.price_change_percentage_24th >=0;
           return(
             <Link
             className={classes.CarousalItem} to={`/coins/${coin.id}`}>
@@ -39,7 +40,14 @@ const Carousal = () => {
               height="80"
               style={{marginBottom:10}}
               />
-
+              <span>
+                {coin?.symbol}
+              &nbsp;
+              <span>
+                {profit && "+"}
+                {coin?.price_change_percentage_24h?.toFixed(2)}%
+              </span>
+              </span>
               </Link>
             
           )
@@ -61,6 +69,7 @@ const Carousal = () => {
      autoPlayInterval={1000}
      animationDuration={1500}
      disableDotsControls
+     disableButtonsControls
      responsive={responsive}
      autoPlay
      items={items}
