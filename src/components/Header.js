@@ -1,19 +1,30 @@
 import { AppBar, Container, MenuItem, Select, Toolbar, Typography, makeStyles } from '@material-ui/core'
+import { createTheme, ThemeProvider,} from "@material-ui/core/styles";
 import React from 'react'
 import { CryptoState } from '../Cryptocontex'
 const useStyles=makeStyles(()=>({
   title:{
     flex:1,
+    color:"gold",
     fontWeight:"bold",
     cursor:"pointer",
   }
-}))
+}));
+const darkTheme=createTheme({
+  palette:{
+    primary:{
+      main:"#fff",
+    },
+    type:"dark"
+  }
+})
 const Header = () => {
   const classes =useStyles()
   const {currency , setCurrency}=CryptoState();
   console.log(currency)
   return (
-  <AppBar color='transparent' position='static'>
+  <ThemeProvider theme={darkTheme}>
+    <AppBar color='transparent' position='static'>
     <Container>
       <Toolbar>
         <Typography  className={classes.title}>
@@ -33,6 +44,7 @@ const Header = () => {
     </Container>
 
     </AppBar>
+  </ThemeProvider>
   )
 }
 
