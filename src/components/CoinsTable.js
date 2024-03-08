@@ -137,7 +137,14 @@ const CoinsTable = () => {
                         display: "flex",
                         gap: 15,
                       }}
-                    ></TableCell>
+                    >
+                       <img
+                            src={row?.image}
+                            alt={row.name}
+                            height="50"
+                            style={{ marginBottom: 10 }}
+                          />
+                    </TableCell>
                   </TableRow>
                 );
               })}
