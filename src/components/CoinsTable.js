@@ -6,6 +6,7 @@ import axios from "axios";
 import { CryptoState } from "../Cryptocontex";
 import { useNavigate } from "react-router-dom";
 
+
 import {
   Container,
   CssBaseline,
@@ -22,13 +23,16 @@ import {
   createTheme,
 } from "@material-ui/core";
 
+export function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
 
-  const { currency } = CryptoState();
+  const { currency,symbol } = CryptoState();
 
   // const useStyles = makeStyles({
   //   row: {
@@ -144,6 +148,42 @@ const CoinsTable = () => {
                             height="50"
                             style={{ marginBottom: 10 }}
                           />
+                           <div
+                            style={{ display: "flex", flexDirection: "column" }}
+                          >
+                            <span
+                              style={{
+                                textTransform: "uppercase",
+                                fontSize: 22,
+                              }}
+                            >
+                              {row.symbol}
+                            </span>
+                            <span style={{ color: "darkgrey" }}>
+                              {row.name}
+                            </span>
+                          </div>
+                    </TableCell>
+                    <TableCell align="right">
+                      {symbol}{""}
+                      {numberWithCommas(row.current_price.toFixed(2))}
+                    </TableCell>
+                    <TableCell  align="right"
+                          style={{
+                            color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+                            fontWeight: 500,
+                          }}
+                        >
+                          {profit && "+"}
+                          {row.price_change_percentage_24h.toFixed(2)}%
+                        </TableCell>
+                        <TableCell align="right">
+                          {symbol}{" "}
+                          {numberWithCommas(
+                            row.market_cap.toString().slice(0, -6)
+                          )}
+                          M
+
                     </TableCell>
                   </TableRow>
                 );
