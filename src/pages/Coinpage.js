@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { SingleCoin } from '../config/api'
 import {CryptoState} from "../Cryptocontex"
 import axios from 'axios'
+import { makeStyles } from '@material-ui/core'
+import CoinInfo from '../components/CoinInfo'
 
 const Coinpage = () => {
   const {id}=useParams()
@@ -17,11 +19,31 @@ const Coinpage = () => {
       fetchCoin()
     },[]);
 
+    // const useStyles=makeStyles((theme)=>({
+    //   container:{
+    //     width:"30%",
+    //     [theme.breakpoints.down("md")]:{
+    //       flexDirection:"center",
+    //     },
+    //     display:"flex",
+    //     alignItems:"center",
+    //     marginTop:25,
+    //     borderRight:"2px solid grey",
+        
+    //   },
+    // }));
+    // const classes=useStyles();
+
 
   return (
-    <div>
-        <h1>coin page</h1>
-      
+    
+    <div >
+      <div className=' container sidebar'>
+        <h1>coininfo</h1>
+        {/* sidebar */}
+      </div>
+      {/* chart */}
+      <CoinInfo coin={coin}/>
     </div>
   )
 }

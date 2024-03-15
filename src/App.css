@@ -9,4 +9,22 @@
   color: gold;
   
  }
-  
+.container{
+  width: 30%;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  margin-top: 25px;
+  border-right: 2px solid gray;
+}
+
+  /* container:{
+   width:"30%",
+           
+             flexDirection:"center",
+           },
+           display:"flex",
+           alignItems:"center",
+           marginTop:25,
+          borderRight:"2px solid grey",
+  } */
